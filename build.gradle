@@ -50,7 +50,6 @@ test {
     systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
 }
 
-wpi.java.configureExecutableTasks(jar)
 wpi.java.configureTestTasks(test)
 
 tasks.withType(JavaCompile) {
@@ -63,3 +62,5 @@ jar {
     manifest edu.wpi.first.gradlerio.GradleRIOPlugin.javaManifest(ROBOT_MAIN_CLASS)
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
+
+wpi.java.configureExecutableTasks(jar)
