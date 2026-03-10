@@ -1,0 +1,17 @@
+import org.gradle.internal.os.OperatingSystem
+
+pluginManagement {
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+        String frcYear = '2026'
+        File frcHome
+        if (OperatingSystem.current().isWindows()) {
+            frcHome = new File(System.getenv('PUBLIC') + "/wpilib/${frcYear}")
+        } else {
+            frcHome = new File(System.getProperty('user.home') + "/wpilib/${frcYear}")
+        }
+        File vendorFolder = new File(frcHome, 'maven')
+        maven { url vendorFolder }
+    }
+}

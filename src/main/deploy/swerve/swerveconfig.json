@@ -1,0 +1,20 @@
+{
+  "imu": {
+    "type": "pigeon2",
+    "id": 13,
+    "canbus": ""
+  },
+  "invertedIMU": false,
+  "modules": [
+    "frontleft.json",
+    "frontright.json",
+    "backleft.json",
+    "backright.json"
+  ],
+  "maxModuleSpeed": 3.048,
+  "maxSpeed": 3.048,
+  "angleJoystickRadiusDeadband": 0.5,
+  "wheelBase": 0.6096,
+  "trackWidth": 0.6096,
+  "optimalVoltage": 12.0
+}
