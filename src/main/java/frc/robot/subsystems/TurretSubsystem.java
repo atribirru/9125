@@ -9,10 +9,7 @@ import com.revrobotics.spark.SparkBase.ResetMode;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.TurretConstants;
 
-/**
- * Subsystem that owns and controls the turret rotation motor.
- * The motor is a SparkMax (NEO) with brake mode to hold position when stopped.
- */
+
 public class TurretSubsystem extends SubsystemBase {
 
     private final SparkMax turretMotor;
@@ -35,13 +32,11 @@ public class TurretSubsystem extends SubsystemBase {
         turretMotor.set(speed);
     }
 
-    /** Stops the turret motor. */
     public void stop() {
         turretMotor.set(0.0);
     }
 
     @Override
     public void periodic() {
-        // Nothing needed here for now — tracking logic lives in TurretRotationCommand
     }
 }

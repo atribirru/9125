@@ -12,19 +12,16 @@ public class TurretRotationCommand extends Command {
     private final TurretSubsystem turret;
     private final PIDController pidController;
 
-    private static final double kP = 0.02;  // TODO: tune
-    private static final double kI = 0.0;   // TODO: tune
-    private static final double kD = 0.0;   // TODO: tune
-    private static final double MAX_SPEED = 0.5;  // TODO: tune - hopefully it can be 1.0 but probably not
+    private static final double MAX_SPEED = 0.5;  
     private static final double TOLERANCE = 1.0;  // how close to target angle is acceptable ;)
 
     public TurretRotationCommand(LimelightVision limelight, TurretSubsystem turret) {
         this.limelight = limelight;
         this.turret = turret;
-        this.pidController = new PIDController(kP, kI, kD);
-        this.pidController.setSetpoint(0.0); // target: tag centered (tx = 0)
+        this.pidController = new PIDController(0.02, 0, 0);
+        this.pidController.setSetpoint(0.0);
         this.pidController.setTolerance(TOLERANCE);
-        addRequirements(turret); // tells the scheduler this command owns the turret
+        addRequirements(turret);
     }
 
     @Override
@@ -51,6 +48,6 @@ public class TurretRotationCommand extends Command {
 
     @Override
     public boolean isFinished() {
-        return false; // run until interrupted
+        return false;
     }
 }
