@@ -49,7 +49,7 @@ public class SwerveSubsystem extends SubsystemBase {
                             new edu.wpi.first.math.geometry.Translation2d(
                                     translationX.getAsDouble() * swerveDrive.getMaximumChassisVelocity(),
                                     translationY.getAsDouble() * swerveDrive.getMaximumChassisVelocity()),
-                            0.8),
+                            1.0),
                     Math.pow(angularRotation.getAsDouble(), 3) * swerveDrive.getMaximumChassisAngularVelocity(),
                     true, // field-relative
                     false // open loop
