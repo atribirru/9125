@@ -50,7 +50,7 @@ public class SwerveSubsystem extends SubsystemBase {
                                     translationX.getAsDouble() * swerveDrive.getMaximumChassisVelocity(),
                                     translationY.getAsDouble() * swerveDrive.getMaximumChassisVelocity()),
                             1.0),
-                    Math.pow(angularRotation.getAsDouble(), 3) * swerveDrive.getMaximumChassisAngularVelocity(),
+                    angularRotation.getAsDouble() * swerveDrive.getMaximumChassisAngularVelocity() * 2.0,
                     true, // field-relative
                     false // open loop
             );
