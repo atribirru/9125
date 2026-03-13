@@ -21,6 +21,8 @@ public class Robot extends TimedRobot {
     @Override
     public void robotInit() {
         robotContainer = new RobotContainer();
+        turretCommand = new TurretRotationCommand(robotContainer.getLimelight());
+        CommandScheduler.getInstance().schedule(turretCommand);
         SparkMaxConfig config_ = new SparkMaxConfig();
         config_.idleMode(SparkBaseConfig.IdleMode.kBrake);
         turretMotor = new SparkMax(23, MotorType.kBrushless);
